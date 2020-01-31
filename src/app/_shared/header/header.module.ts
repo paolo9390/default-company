@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
-import { MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatButtonModule, MatSlideToggleModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -12,7 +13,9 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSlideToggleModule,
+    FlexLayoutModule
   ],
   exports: [HeaderComponent]
 })

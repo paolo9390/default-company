@@ -12,19 +12,40 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$default-company-primary: mat-palette($mat-pink);
-$default-company-accent: mat-palette($mat-light-blue, A200, A100, A400);
+$primary: mat-palette($mat-pink);
+$accent: mat-palette($mat-light-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$default-company-warn: mat-palette($mat-indigo);
+$warn: mat-palette($mat-indigo);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$default-company-theme: mat-light-theme($default-company-primary, $default-company-accent, $default-company-warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($default-company-theme);
+@include angular-material-theme($theme);
+
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-gray);
+$dark-accent:  mat-palette($mat-pink);
+$dark-warn:    mat-palette($mat-amber, A200, A100, A400);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+}
+
+.primary-body {
+    background-color: mat-color($dark-primary, 900) !important;
+    color: mat-color($dark-primary, 200) !important;
+}
+
+.dark-primary-body {
+    background-color: mat-color($dark-primary, 900) !important;
+    color: mat-color($dark-primary, 200) !important;
+}
 
 /* You can add global styles to this file, and also import other style files */
 
